@@ -6,6 +6,8 @@ let corner = [
         "name": "cap",
         "index": [
           "desc",
+	  "uri",
+	  "cap_id"
         ]
       },
       {
@@ -13,13 +15,20 @@ let corner = [
         "index": [
           "pii.name",
           "sii.name",
-          "cii.name"
+          "cii.name",
+	  "type",
+	  "user_id",
+	  "access.token.tid",
+	  "security.license.lid",
+	  "pii.address.phone_number"
         ]
       },
       {
         "name": "user",
         "index": [
           "pii.name",
+          "user_id",
+	  "pii.address.phone_number"
         ]
       },
       {
@@ -36,7 +45,9 @@ let corner = [
       },
       {
         "name": "prn",
-        "index": []
+        "index": [
+	  "value"
+	]
       }      
     ]
   }
@@ -77,7 +88,10 @@ let issuance = [
       {
         "name": "identity",
         "index": [
-          "pii.name"
+          "pii.name",
+	  "pii.address.phone_number",
+	  "user_id",
+	  "reg_id"
         ]
       }
     ]
