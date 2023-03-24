@@ -597,7 +597,14 @@ module.exports = {
       api: dedup.api,
       name: dedup.sii.name
     },
-    caps: uris2caps(dedup.caps)
+    caps: uris2caps(dedup.caps),
+    fsys: {
+      version: "v1.0",
+      conf: {
+        fs: filesystem_m
+      },
+      dir: require('./_fs_struct').dedup
+    }
   },
   dummy: {
     name: "corner.dummy",

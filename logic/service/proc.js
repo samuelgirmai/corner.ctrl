@@ -130,6 +130,32 @@ async function allow(ctx)
   return r;
 }
 
+async function exprt(ctx)
+{
+  let r;
+
+  r = await read_license("corner.client.root");
+
+  if(r.status == "err") {
+    return r;
+  }
+
+  let param = {
+    name: ctx.name,
+    arg: {
+      version: ctx.version,
+      license: r.result.linfo.license
+    }
+  }
+
+  _print(
+    r = await API.run(param, CONFIG.master.url, '/platform/boot/proc/export'),
+    null
+  );
+
+  return r;
+}
+
 async function state(ctx, state)
 {
   let r;
@@ -190,6 +216,7 @@ const PROC = {
   config:	config,
   session:	session,
   setup:	setup,
+  exprt:	exprt,
   allow:	allow,
   state:	state,
   restore:	restore,

@@ -117,6 +117,20 @@ export async function proc_third(proc, arg)
   return r;
 }
 
+export async function proc_export(proc, arg)
+{
+  let r, ctx, key;
+
+  ctx = require('./ctx/service');
+  key = Object.keys(ctx);
+
+  for(let i = 0; i<key.length; i++){
+    r = await PROC.exprt(ctx[key[i]]);
+  }
+  
+  return r;
+}
+
 export async function proc_restore(proc, arg)
 {
   let r;
@@ -131,6 +145,7 @@ const CTRL = {
   //proc_fs:	proc_fs,
   proc_basic:	proc_basic,
   proc_third:	proc_third,
+  proc_export:	proc_export,
   proc_restore: proc_restore,
   proc_reboot:	proc_reboot
 }

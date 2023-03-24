@@ -98,6 +98,20 @@ let issuance = [
   }
 ]
 
+let dedup = [
+  {
+    "name": "dedup",
+    "file": [
+      {
+        "name": "index",
+        "index": [
+	  "user_id"
+	]
+      }
+    ]
+  }
+]
+
 let dummy = [
   {
     "name": "dummy",
@@ -116,6 +130,7 @@ module.exports = {
   corner: corner,
   finance: finance,
   issuance: issuance,
+  dedup: dedup,
   dummy: dummy
 }
 

@@ -246,6 +246,19 @@ export async function start_service()
   controller_start();
 }
 
+export async function export_caps()
+{
+  let r;
+
+  r = await CTRL.proc_export();
+
+  if(r.status == "err"){
+    console.log(".err.export");
+  }
+
+  controller_start();
+}
+
 export async function restore_config()
 {
   let r;
