@@ -246,6 +246,19 @@ export async function start_service()
   controller_start();
 }
 
+export async function build_index()
+{
+  let r;
+
+  r = await CTRL.proc_index("build");
+
+  if(r.status == "err"){
+    console.log(".err.index.build");
+  }
+
+  controller_start();
+}
+
 export async function export_caps()
 {
   let r;

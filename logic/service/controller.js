@@ -117,6 +117,15 @@ export async function proc_third(proc, arg)
   return r;
 }
 
+export async function proc_index(arg)
+{
+  let r;
+
+  r = await PROC.state("corner.dedup", arg);
+    
+  return r;
+}
+
 export async function proc_export(proc, arg)
 {
   let r, ctx, key;
@@ -147,6 +156,7 @@ const CTRL = {
   proc_third:	proc_third,
   proc_export:	proc_export,
   proc_restore: proc_restore,
+  proc_index:	proc_index,
   proc_reboot:	proc_reboot
 }
 

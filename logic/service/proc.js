@@ -156,12 +156,12 @@ async function exprt(ctx)
   return r;
 }
 
-async function state(ctx, state)
+async function state(name, state)
 {
   let r;
 
   let param = {
-    name: ctx.name,
+    name: name,
     arg: {
       state: state
     }
