@@ -5,30 +5,30 @@ let corner = [
       {
         "name": "cap",
         "index": [
-          "desc",
-	  "uri",
-	  "cap_id"
+	  {key: "desc", val: 1, unq: false},
+	  {key: "uri", val: 1, unq: true},
+	  {key: "cap_id", val: 1, unq: true}
         ]
       },
       {
         "name": "identity",
         "index": [
-          "pii.name",
-          "sii.name",
-          "cii.name",
-	  "type",
-	  "user_id",
-	  "access.token.tid",
-	  "security.license.lid",
-	  "pii.address.phone_number"
+	  {key: "pii.name", val: 1, unq: false},
+	  {key: "sii.name", val: 1, unq: false},
+	  {key: "cii.name", val: 1, unq: false},
+	  {key: "type", val: 1, unq: false},
+	  {key: "user_id", val: 1, unq: true},
+	  {key: "access.token.tid", val: 1, unq: false},
+	  {key: "security.license.lid", val: 1, unq: false},
+	  {key: "pii.address.phone_number", val: 1, unq: false}
         ]
       },
       {
         "name": "user",
         "index": [
-          "pii.name",
-          "user_id",
-	  "pii.address.phone_number"
+	  {key: "pii.name", val: 1, unq: false},
+	  {key: "user_id", val: 1, unq: true},
+	  {key: "pii.address.phone_number", val: 1, unq: false}
         ]
       },
       {
@@ -46,7 +46,7 @@ let corner = [
       {
         "name": "prn",
         "index": [
-	  "value"
+	  {key: "value", val: 1, unq: true}
 	]
       }      
     ]
@@ -88,10 +88,10 @@ let issuance = [
       {
         "name": "identity",
         "index": [
-          "pii.name",
-	  "pii.address.phone_number",
-	  "user_id",
-	  "reg_id"
+	  {key: "pii.name", val: 1, unq: false},
+	  {key: "pii.address.phone_number", val: 1, unq: false},
+	  {key: "user_id", val: 1, unq: false},
+	  {key: "reg_id", val: 1, unq: true}
         ]
       }
     ]
@@ -105,7 +105,7 @@ let dedup = [
       {
         "name": "index",
         "index": [
-	  "user_id"
+	  {key: "user_id", val: 1, unq: true}
 	]
       }
     ]
@@ -119,7 +119,7 @@ let dummy = [
       {
         "name": "data",
         "index": [
-          "data_id"
+	  {key: "data_id", val: 1, unq: true}
         ]
       }
     ]

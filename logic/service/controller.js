@@ -27,7 +27,7 @@ export async function proc_basic(proc, arg)
 
   ctx = require('./ctx/basic');
 
-  if(proc == "config"){
+  if(proc == "config") {
     r = await PROC.config(ctx.muxer);
     if(r.status == "err"){
       return r;
@@ -40,7 +40,7 @@ export async function proc_basic(proc, arg)
     return await PROC.fsys(ctx.auth);
   }
 
-  if(proc == "session"){
+  if(proc == "session") {
     r = await PROC.session(ctx.muxer);
 
     if(r.status == "err") {
@@ -50,15 +50,17 @@ export async function proc_basic(proc, arg)
     return await PROC.session(ctx.auth);
   }
 
-  if(proc == "setup"){
+  if(proc == "setup") {
     return await PROC.setup(ctx.auth, arg);
   }
 
-  if(proc == "allow"){
+  if(proc == "allow") {
     return await PROC.allow(ctx.auth);
   }
 
-  if(proc == "state"){
+  if(proc == "state") {
+	  console.log("MUXER", JSON.stringify(ctx.muxer, 0, '  '));
+
     r = await PROC.state(ctx.muxer, arg);
 
     if(r.status == "err") {
