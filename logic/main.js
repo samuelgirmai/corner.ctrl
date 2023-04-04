@@ -5,6 +5,7 @@ import {
   service_controller,
   start_service,
   build_index,
+  allow_caps,
   export_caps,
   restore_config
 } from './service/main';
@@ -26,7 +27,7 @@ const main_prompt = [
     type: 'list',
     name: 'main',
     message: 'controller test window',
-    choices: ['show services', 'install services', 'create clients', 'create admin', 'show credentials', 'start services', 'export caps', 'restore config', 'build index', 'exit']
+    choices: ['show services', 'install services', 'create clients', 'create admin', 'show credentials', 'start services', 'export caps', 'allow caps', 'restore config', 'build index', 'exit']
   }
 ];
 
@@ -55,6 +56,9 @@ export async function controller_start()
       break;
     case 'export caps':
       await export_caps();
+      break;
+    case 'allow caps':
+      await allow_caps();
       break;
     case 'restore config':
       await restore_config();

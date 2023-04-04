@@ -259,6 +259,19 @@ export async function build_index()
   controller_start();
 }
 
+export async function allow_caps()
+{
+  let r;
+
+  r = await CTRL.proc_allow();
+
+  if(r.status == "err"){
+    console.log(".err.export");
+  }
+
+  controller_start();
+}
+
 export async function export_caps()
 {
   let r;

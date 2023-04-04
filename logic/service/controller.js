@@ -59,8 +59,6 @@ export async function proc_basic(proc, arg)
   }
 
   if(proc == "state") {
-	  console.log("MUXER", JSON.stringify(ctx.muxer, 0, '  '));
-
     r = await PROC.state(ctx.muxer, arg);
 
     if(r.status == "err") {
@@ -119,12 +117,31 @@ export async function proc_third(proc, arg)
   return r;
 }
 
+
 export async function proc_index(arg)
 {
   let r;
 
-  r = await PROC.state("corner.dedup", arg);
+  r = await PROC.state({name: "corner.dedup"}, arg);
     
+  return r;
+}
+
+export async function proc_allow(proc, arg)
+{
+  let r, ctx, key;
+
+  ctx = require('./ctx/basic');
+
+  await PROC.allow(ctx.auth);
+
+  ctx = require('./ctx/service');
+  key = Object.keys(ctx);
+
+  for(let i = 0; i<key.length; i++){
+    r = await PROC.allow(ctx[key[i]]);
+  }
+
   return r;
 }
 
@@ -157,6 +174,7 @@ const CTRL = {
   proc_basic:	proc_basic,
   proc_third:	proc_third,
   proc_export:	proc_export,
+  proc_allow:	proc_allow,
   proc_restore: proc_restore,
   proc_index:	proc_index,
   proc_reboot:	proc_reboot
