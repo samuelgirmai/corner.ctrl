@@ -395,7 +395,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.rethinkdb
+        fs: F.mongodb
       },
       dir: D.finance
     }
@@ -421,7 +421,7 @@ module.exports = {
        * FIXME: this breaks the "Corner SoT" principle
        * i.e admin uservice should have its own fs
        * */
-      fs: F.rethinkdb,
+      fs: F.mongodb,
       api: admin.api,
       name: admin.sii.name
     },
@@ -462,7 +462,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.rethinkdb
+        fs: F.mongodb
       },
       dir: D.issuance
     }
@@ -472,7 +472,7 @@ module.exports = {
     sii: dedup.sii,
     conf: {
       proxy: G.muxer,
-      fs: F.rethinkdb,
+      fs: F.mongodb,
       api: dedup.api,
       name: dedup.sii.name
     },
@@ -480,7 +480,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.rethinkdb
+        fs: F.mongodb
       },
       dir: D.dedup
     }
@@ -497,7 +497,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.rethinkdb
+        fs: F.mongodb
       },
       dir: D.dummy
     }

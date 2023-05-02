@@ -73,7 +73,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.rethinkdb
+        fs: F.mongodb
       },
       dir: D.corner
     }
