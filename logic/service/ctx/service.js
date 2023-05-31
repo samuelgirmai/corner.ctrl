@@ -530,7 +530,7 @@ module.exports = {
       dir: D.dummy
     }
   },
-  /*geofense: {
+  geofense: {
     name: "corner.geofense",
     sii: geofense.sii,
     conf: {
@@ -542,10 +542,10 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.mongodb
+        fs: F.rethinkdb
       },
       dir: D.geofense
     }
-  }*/
+  }
 }
 
