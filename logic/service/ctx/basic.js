@@ -26,8 +26,8 @@ export let auth = {
   },
   api: G.auth,
   caps: [
-    "/platform/notif/heartbeat",
-    "/platform/stream/heartbeat",
+    //"/platform/notif/heartbeat",
+    //"/platform/stream/heartbeat",
     "/platform/finance/heartbeat",
     "/platform/payment/heartbeat",
     "/platform/system/heartbeat",
@@ -41,9 +41,9 @@ export let auth = {
     "/platform/dedup/index/write",
     "/platform/dedup/index/update",
     "/platform/dedup/index/delete",
-    "/platform/stream/open",
-    "/platform/stream/close",
-    "/platform/stream/config/read",
+    //"/platform/stream/open",
+    //"/platform/stream/close",
+    //"/platform/stream/config/read",
     "/platform/auth/search/join",
     "/platform/auth/search/exit"
   ]
@@ -64,7 +64,7 @@ module.exports = {
     cii: auth.cii,
     conf: {
       proxy: G.muxer,
-      stream: G.stream,
+      //stream: G.stream,
       asset: G.asset,
       api: auth.api,
       name: auth.sii.name,
@@ -73,7 +73,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.mongodb
+        fs: F.rethinkdb
       },
       dir: D.corner
     }

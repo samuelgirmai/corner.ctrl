@@ -28,7 +28,7 @@ fsys.sii.host = fsys.api.addr+":"+fsys.api.port;
 /*
  * streaming service SoT
  */
-let stream = {
+/*let stream = {
   sii: {
     name: "corner.stream",
     desc: "corner streaming service",
@@ -49,12 +49,12 @@ let stream = {
   },
   caps: []
 }
-stream.sii.host = stream.api.addr+":"+stream.api.port;
+stream.sii.host = stream.api.addr+":"+stream.api.port;*/
 
 /*
  * notif service SoT
  */
-let notif = {
+/*let notif = {
   sii: {
     name: "corner.notif",
     desc: "corner notification service",
@@ -77,7 +77,7 @@ let notif = {
     "/platform/notif/exit",
   ]
 }
-notif.sii.host = notif.api.addr+":"+notif.api.port;
+notif.sii.host = notif.api.addr+":"+notif.api.port;*/
 
 let finance = {
   sii: {
@@ -347,6 +347,34 @@ let dummy = {
 };
 dummy.sii.host = dummy.api.addr+":"+dummy.api.port;
 
+let geofense = {
+  sii: {
+    name: "corner.geofense",
+    desc: "corner iot geofense PoC service",
+    host: null,
+    address: {
+      phone_number: "+251000000001",
+      email: "corner@synapse.io"
+    }
+  },
+  api: {
+    port: 42000,
+    bind: "0.0.0.0",
+    addr: "0.0.0.0",
+  },
+  caps: [
+    "/platform/auth/identity/person/write",
+    "/platform/auth/identity/person/update",
+    "/platform/auth/identity/person/delete",
+    "/platform/auth/identity/access/write",
+    "/platform/auth/identity/access/delete",
+    "/platform/auth/identity/person/security/update",
+    "/platform/auth/prng/write",
+    "/platform/auth/identity/person/read"
+  ]
+};
+geofense.sii.host = geofense.api.addr+":"+geofense.api.port;
+
 module.exports = {
   fsys: {
     name: "corner.fsys",
@@ -358,7 +386,7 @@ module.exports = {
     },
     caps: uris2caps(fsys.caps)
   },
-  stream: {
+  /*stream: {
     name: "corner.stream",
     sii: stream.sii,
     conf: {
@@ -381,13 +409,13 @@ module.exports = {
       name: notif.sii.name
     },
     caps: uris2caps(notif.caps)
-  },
+  },*/
   finance: {
     name: "corner.finance",
     sii: finance.sii,
     conf: {
       proxy: G.muxer,
-      stream: G.stream,
+      //stream: G.stream,
       api: finance.api,
       name: finance.sii.name
     },
@@ -395,7 +423,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.mongodb
+        fs: F.rethinkdb
       },
       dir: D.finance
     }
@@ -405,7 +433,7 @@ module.exports = {
     sii: payment.sii,
     conf: {
       proxy: G.muxer,
-      stream: G.stream,
+      //stream: G.stream,
       api: payment.api,
       name: payment.sii.name
     },
@@ -416,12 +444,12 @@ module.exports = {
     sii: admin.sii,
     conf: {
       proxy: G.muxer,
-      stream: G.stream,
+      //stream: G.stream,
       /*
        * FIXME: this breaks the "Corner SoT" principle
        * i.e admin uservice should have its own fs
        * */
-      fs: F.mongodb,
+      fs: F.rethinkdb,
       api: admin.api,
       name: admin.sii.name
     },
@@ -454,7 +482,7 @@ module.exports = {
     sii: issuance.sii,
     conf: {
       proxy: G.muxer,
-      stream: G.stream,
+      //stream: G.stream,
       api: issuance.api,
       name: issuance.sii.name
     },
@@ -462,7 +490,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.mongodb
+        fs: F.rethinkdb
       },
       dir: D.issuance
     }
@@ -472,7 +500,7 @@ module.exports = {
     sii: dedup.sii,
     conf: {
       proxy: G.muxer,
-      fs: F.mongodb,
+      fs: F.rethinkdb,
       api: dedup.api,
       name: dedup.sii.name
     },
@@ -480,7 +508,7 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.mongodb
+        fs: F.rethinkdb
       },
       dir: D.dedup
     }
@@ -497,10 +525,27 @@ module.exports = {
     fsys: {
       version: "v1.0",
       conf: {
-        fs: F.mongodb
+        fs: F.rethinkdb
       },
       dir: D.dummy
     }
-  }
+  },
+  /*geofense: {
+    name: "corner.geofense",
+    sii: geofense.sii,
+    conf: {
+      proxy: G.muxer,
+      api: geofense.api,
+      name: geofense.sii.name
+    },
+    caps: uris2caps(geofense.caps),
+    fsys: {
+      version: "v1.0",
+      conf: {
+        fs: F.mongodb
+      },
+      dir: D.geofense
+    }
+  }*/
 }
 

@@ -126,11 +126,38 @@ let dummy = [
   }
 ]
 
+let geofense = [
+  {
+    "name": "geofense",
+    "file": [
+      {
+        "name": "border",
+        "index": [
+          {key: "bid", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "sensor",
+        "index": [
+          {key: "sid", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "fense",
+        "index": [
+          {key: "fid", val: 1, unq: true}
+        ]
+      }
+    ]
+  }
+]
+
 module.exports = {
   corner: corner,
   finance: finance,
   issuance: issuance,
   dedup: dedup,
-  dummy: dummy
+  dummy: dummy,
+  geofense: geofense
 }
 
