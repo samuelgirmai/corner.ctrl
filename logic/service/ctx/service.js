@@ -168,7 +168,12 @@ let admin = {
     /*for dummy user*/
     '/platform/dummy/user/write',
     '/platform/dummy/user/delete',
-    '/platform/dummy/user/list/read'
+    '/platform/dummy/user/list/read',
+
+    /*for geofense user*/
+    '/iot/geofense/user/write',
+    '/iot/geofense/user/delete',
+    '/iot/geofense/user/list/read'
   ]
 };
 admin.sii.host = admin.api.addr+":"+admin.api.port;
