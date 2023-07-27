@@ -5,7 +5,7 @@ export let filesystem_m = {
   name: "mongodb",
   port: 27017,
   //host: "corner.fs"
-  host: "0.0.0.0"
+  host: "196.190.43.99"
 }
 
 export let filesystem_r = {
@@ -32,7 +32,7 @@ export let assetfs = {
   name: "seaweedfs",
   port: 9333,
   //host: "corner.asset"
-  host: "0.0.0.0"
+  host: "196.190.43.99"
 }
 
 module.exports = {
@@ -40,7 +40,7 @@ module.exports = {
     name: "mongodb",
     port: 27017,
     //host: "corner.fs"
-    host: "0.0.0.0"
+    host: "196.190.43.99"
   },
   rethinkdb: {
     name: "rethinkdb",
@@ -57,6 +57,6 @@ module.exports = {
     name: "seaweedfs",
     port: 9333,
     //host: "corner.asset"
-    host: "0.0.0.0"
+    host: "196.190.43.99"
   }
 }

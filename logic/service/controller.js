@@ -149,6 +149,13 @@ export async function proc_export(proc, arg)
 {
   let r, ctx, key;
 
+  ctx = require('./ctx/basic');
+  key = Object.keys(ctx);
+
+  for(let i = 0; i<key.length; i++){
+    r = await PROC.exprt(ctx[key[i]]);
+  }
+
   ctx = require('./ctx/service');
   key = Object.keys(ctx);
 
