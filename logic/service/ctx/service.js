@@ -385,7 +385,7 @@ module.exports = {
     name: "corner.fsys",
     sii: fsys.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       api: fsys.api,
       name: fsys.sii.name,
     },
@@ -395,7 +395,7 @@ module.exports = {
     name: "corner.stream",
     sii: stream.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       assert: G.auth,
       api: stream.api,
       cachefs: F.redis,
@@ -408,7 +408,7 @@ module.exports = {
     name: "corner.notif",
     sii: notif.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       stream: G.stream,
       api: notif.api,
       name: notif.sii.name
@@ -419,7 +419,7 @@ module.exports = {
     name: "corner.finance",
     sii: finance.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       //stream: G.stream,
       api: finance.api,
       name: finance.sii.name
@@ -437,7 +437,7 @@ module.exports = {
     name: "corner.payment",
     sii: payment.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       //stream: G.stream,
       api: payment.api,
       name: payment.sii.name
@@ -448,7 +448,7 @@ module.exports = {
     name: "corner.admin",
     sii: admin.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       //stream: G.stream,
       /*
        * FIXME: this breaks the "Corner SoT" principle
@@ -464,7 +464,7 @@ module.exports = {
     name: "corner.asset",
     sii: asset.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       api: asset.api,
       fs: F.seaweedfs,
       name: asset.sii.name
@@ -475,7 +475,7 @@ module.exports = {
     name: "corner.ashera",
     sii: ashera.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       api: ashera.api,
       fs: ashera.fs,
       name: ashera.sii.name
@@ -486,7 +486,7 @@ module.exports = {
     name: "corner.issuance",
     sii: issuance.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       //stream: G.stream,
       api: issuance.api,
       name: issuance.sii.name
@@ -504,7 +504,7 @@ module.exports = {
     name: "corner.dedup",
     sii: dedup.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       fs: F.mongodb,
       api: dedup.api,
       name: dedup.sii.name
@@ -522,7 +522,7 @@ module.exports = {
     name: "corner.dummy",
     sii: dummy.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       api: dummy.api,
       name: dummy.sii.name
     },
@@ -539,7 +539,7 @@ module.exports = {
     name: "corner.geofense",
     sii: geofense.sii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       api: geofense.api,
       name: geofense.sii.name
     },

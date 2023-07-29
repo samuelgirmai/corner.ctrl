@@ -34,6 +34,12 @@ var STREAM_ADDR = "0.0.0.0"
 var STREAM_BIND = "0.0.0.0"
 
 module.exports = {
+  proxy: {
+    url: "http://"+MUXER_ADDR+":"+MUXER_PORT
+  },
+  assert: {
+    url: "http://"+AUTH_ADDR+":"+AUTH_PORT
+  },
   muxer: {
     addr: MUXER_ADDR,
     port: MUXER_PORT,

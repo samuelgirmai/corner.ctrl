@@ -55,7 +55,7 @@ module.exports = {
     name: "corner.muxer",
     conf: {
       api: G.muxer,
-      assert: G.auth
+      assert: G.assert
     }
   },
   auth: {
@@ -63,7 +63,7 @@ module.exports = {
     sii: auth.sii,
     cii: auth.cii,
     conf: {
-      proxy: G.muxer,
+      proxy: G.proxy,
       //stream: G.stream,
       asset: G.asset,
       api: auth.api,
