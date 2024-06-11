@@ -10,6 +10,7 @@ let fsys = {
   sii: {
     name: "corner.fsys",
     desc: "corner filesystem service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -28,10 +29,11 @@ fsys.sii.host = fsys.api.addr+":"+fsys.api.port;
 /*
  * streaming service SoT
  */
-/*let stream = {
+let stream = {
   sii: {
     name: "corner.stream",
     desc: "corner streaming service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -49,7 +51,7 @@ fsys.sii.host = fsys.api.addr+":"+fsys.api.port;
   },
   caps: []
 }
-stream.sii.host = stream.api.addr+":"+stream.api.port;*/
+stream.sii.host = stream.api.addr+":"+stream.api.port;
 
 /*
  * notif service SoT
@@ -58,6 +60,7 @@ stream.sii.host = stream.api.addr+":"+stream.api.port;*/
   sii: {
     name: "corner.notif",
     desc: "corner notification service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -83,6 +86,7 @@ let finance = {
   sii: {
     name: "corner.finance",
     desc: "corner finance service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -105,6 +109,7 @@ let payment = {
   sii: {
     name: "corner.payment",
     desc: "corner payment service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -133,6 +138,7 @@ let admin = {
   sii: {
     name: "corner.admin",
     desc: "corner admin service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -158,66 +164,35 @@ let admin = {
     /*for issuance user*/
     '/platform/issuance/user/write',
     '/platform/issuance/user/delete',
+    '/platform/issuance/user/update',
     '/platform/issuance/user/list/read',
 
     /*for deduplication user*/
     '/platform/dedup/user/write',
     '/platform/dedup/user/delete',
+    '/platform/dedup/user/update',
     '/platform/dedup/user/list/read',
 
     /*for dummy user*/
     '/platform/dummy/user/write',
     '/platform/dummy/user/delete',
+    '/platform/dummy/user/update',
     '/platform/dummy/user/list/read',
 
     /*for geofense user*/
     '/iot/geofense/user/write',
     '/iot/geofense/user/delete',
-    '/iot/geofense/user/list/read'
+    '/iot/geofense/user/update',
+    '/iot/geofense/user/list/read',
+
+    /*for cexch user*/
+    '/exch/scheme1/user/write',
+    '/exch/scheme1/user/delete',
+    '/exch/scheme1/user/update',
+    '/exch/scheme1/user/list/read'
   ]
 };
 admin.sii.host = admin.api.addr+":"+admin.api.port;
-
-let system = {
-  sii: {
-    name: "corner.system",
-    desc: "corner sys service",
-    host: null,
-    address: {
-      phone_number: "+251000000000",
-      email: "corner@bokri.xyz"
-    }
-  },
-  api: {
-    port: 22008,
-    bind: "0.0.0.0",
-    addr: "0.0.0.0",
-  },
-  caps: [
-    "/platform/auth/identity/access/write",
-    "/platform/auth/identity/access/delete",
-    "/platform/auth/identity/person/security/update",
-
-    '/platform/auth/identity/person/write',
-    '/platform/auth/identity/person/delete',
-    '/platform/auth/identity/person/list/read',
-    '/platform/auth/identity/client/write',
-    '/platform/auth/identity/client/delete',
-    '/platform/auth/identity/client/list/read',
-    '/platform/auth/identity/service/write',
-    '/platform/auth/identity/service/delete',
-    '/platform/auth/identity/service/list/read',
-    '/platform/auth/cap/list/read',
-    '/platform/auth/cap/list/delete',
-    '/platform/auth/cap/list/allow',
-    '/platform/auth/cap/list/revoke',
-    '/platform/auth/cap/list/export',
-    '/platform/auth/cap/state/update',
-    '/platform/auth/stats/read',
-    '/platform/auth/service/state/list/read'
-  ]
-};
-system.sii.host = system.api.addr+":"+system.api.port;
 
 /*
  * asset service SoT
@@ -226,6 +201,7 @@ export var asset = {
   sii: {
     name: "corner.asset",
     desc: "corner asset service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -237,7 +213,10 @@ export var asset = {
     "/platform/auth/identity/person/fingerprint/write",
     "/platform/auth/identity/person/photo/write",
     "/platform/issuance/identity/photo/write",
-    "/platform/issuance/identity/photo/update"
+    "/platform/issuance/identity/photo/update",
+    "/platform/ashera/identity/person/fingerprint/verify",
+    "/platform/ashera/identity/person/fingerprint/enroll",
+    "/platform/auth/identity/access/write"
   ]
 }
 asset.sii.host = asset.api.addr+":"+asset.api.port
@@ -246,6 +225,7 @@ let ashera = {
   sii: {
     name: "corner.ashera",
     desc: "corner ashera service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -262,7 +242,10 @@ let ashera = {
     port: 29001,
     host: "127.0.0.1"
   },
-  caps: []
+  caps: [
+    "/platform/auth/identity/person/read",
+    "/platform/auth/identity/person/fingerprint/write"
+  ]
 }
 ashera.sii.host = ashera.api.addr+":"+ashera.api.port;
 
@@ -270,6 +253,7 @@ let issuance = {
   sii: {
     name: "corner.issuance.test",
     desc: "corner issuance test service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -298,6 +282,7 @@ let dedup = {
   sii: {
     name: "corner.dedup",
     desc: "corner deduplication service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -328,6 +313,7 @@ let dummy = {
   sii: {
     name: "corner.dummy",
     desc: "corner dummy test service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000000",
@@ -356,6 +342,7 @@ let geofense = {
   sii: {
     name: "corner.geofense",
     desc: "corner iot geofense PoC service",
+    owner_name: "bokri",
     host: null,
     address: {
       phone_number: "+251000000001",
@@ -380,6 +367,46 @@ let geofense = {
 };
 geofense.sii.host = geofense.api.addr+":"+geofense.api.port;
 
+let cexch = {
+  sii: {
+    name: "corner.cexch",
+    owner_name: "Bokri Ltd.",
+    desc: "corner currency exchange PoC service",
+    owner_name: "bokri",
+    host: null,
+    address: {
+      phone_number: "+251921234323",
+      email: "corner@synapse.io"
+    }
+  },
+  api: {
+    port: 43000,
+    bind: "0.0.0.0",
+    addr: "0.0.0.0",
+  },
+  caps: [
+    "/platform/auth/identity/person/write",
+    "/platform/auth/identity/person/update",
+    "/platform/auth/identity/person/delete",
+    "/platform/auth/identity/access/write",
+    "/platform/auth/identity/access/delete",
+    "/platform/auth/identity/person/security/update",
+    "/platform/admin/user/role/write",
+    "/platform/auth/prng/write",
+    "/platform/auth/identity/person/read",
+    /*not this incentive cap should be moved to finance microservice*/
+    "/exch/scheme1/incentive/tx/write",
+    //streams
+    "/platform/stream/open",
+    "/platform/stream/exit",
+    "/exch/scheme1/mgr/join",
+    "/exch/scheme1/snd/join",
+    "/exch/scheme1/lcp/join",
+    "/exch/scheme1/txv/join"
+  ]
+};
+cexch.sii.host = cexch.api.addr+":"+cexch.api.port;
+
 module.exports = {
   fsys: {
     name: "corner.fsys",
@@ -391,7 +418,7 @@ module.exports = {
     },
     caps: uris2caps(fsys.caps)
   },
-  /*stream: {
+  stream: {
     name: "corner.stream",
     sii: stream.sii,
     conf: {
@@ -404,7 +431,7 @@ module.exports = {
     },
     caps: uris2caps(stream.caps)
   },
-  notif: {
+  /*notif: {
     name: "corner.notif",
     sii: notif.sii,
     conf: {
@@ -450,10 +477,10 @@ module.exports = {
     conf: {
       proxy: G.proxy,
       //stream: G.stream,
-      /*
-       * FIXME: this breaks the "Corner SoT" principle
-       * i.e admin uservice should have its own fs
-       * */
+      
+      // FIXME: this breaks the "Corner SoT" principle
+      // i.e admin uservice should have its own fs
+       
       fs: F.mongodb,
       api: admin.api,
       name: admin.sii.name
@@ -507,7 +534,16 @@ module.exports = {
       proxy: G.proxy,
       fs: F.mongodb,
       api: dedup.api,
-      name: dedup.sii.name
+      name: dedup.sii.name,
+      search: {
+        url: "http://test.bokri.xyz:9100"
+      },
+      setting: {
+        depth: "3",
+        ntype: "4",
+        atype: "1",
+        score: 12
+      }
     },
     caps: uris2caps(dedup.caps),
     fsys: {
@@ -550,6 +586,36 @@ module.exports = {
         fs: F.mongodb
       },
       dir: D.geofense
+    }
+  },
+  cexch: {
+    name: "corner.cexch",
+    sii: cexch.sii,
+    conf: {
+      proxy: G.proxy,
+      api: cexch.api,
+      name: cexch.sii.name,
+      stream: G.stream,
+      ledger: {
+        name: "pg",
+        user: "cexch",
+        password: "357.exe",
+        database: "incentive",
+        port: 5432,
+        host: "127.0.0.1"
+      },
+      incentive: {
+        lcp: [0.01, 'ETB'],
+	txv: [100, 'ETB']
+      }
+    },
+    caps: uris2caps(cexch.caps),
+    fsys: {
+      version: "v1.0",
+      conf: {
+        fs: F.mongodb,
+      },
+      dir: D.cexch
     }
   }
 }

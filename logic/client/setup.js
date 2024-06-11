@@ -9,6 +9,7 @@ let system = {
   cii: {
     name: "corner.client.system",
     desc: "corner sys client",
+    owner_name: "bokri",
     address: {
       phone_number: "+251000000010",
       email: "corner@bokri.xyz"
@@ -23,6 +24,7 @@ let system = {
   cii: {
     name: "corner.client.console",
     desc: "corner console client",
+    owner_name: "bokri",
     address: {
       phone_number: "+251000000015",
       email: "corner@bokri.xyz"
@@ -37,13 +39,15 @@ let admin = {
   cii: {
     name: "corner.client.admin",
     desc: "Corner administrator client",
+    owner_name: "bokri",
     address: {
       phone_number: "+251000000017",
       email: "corner@bokri.xyz"
     }
   },
   caps: [
-    "/platform/admin/access/write"
+    "/platform/admin/access/write",
+    "/platform/auth/validity/read"
   ]
 }
 
@@ -51,6 +55,7 @@ let fsys = {
   cii: {
     name: "corner.client.fsys",
     desc: "corner fsys client",
+    owner_name: "bokri",
     address: {
       phone_number: "+251000000019",
       email: "corner@bokri.xyz"
@@ -83,6 +88,7 @@ let issuance = {
   cii: {
     name: "corner.client.issuance",
     desc: "corner issuance client",
+    owner_name: "bokri",
     address: {
       phone_number: "+251000000018",
       email: "corner@bokri.xyz"
@@ -97,6 +103,7 @@ let dedup = {
   cii: {
     name: "corner.client.dedup",
     desc: "corner deduplication client",
+    owner_name: "bokri",
     address: {
       phone_number: "+251000000020",
       email: "corner@bokri.xyz"
@@ -108,11 +115,11 @@ let dedup = {
 }
 
 module.exports = {
-  system: {
+  /*system: {
     name: "corner.client.system",
     cii: system.cii,
     caps: uris2caps(system.caps)
-  },
+  },*/
   /*console: {
     name: "corner.client.console",
     cii: console.cii,

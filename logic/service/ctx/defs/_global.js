@@ -58,11 +58,11 @@ module.exports = {
     bind: ASSET_BIND,
     url: "http://"+ASSET_ADDR+":"+ASSET_PORT
   },
-  /*stream: {
+  stream: {
     addr: STREAM_ADDR,
     port: STREAM_PORT,
     bind: STREAM_BIND,
     url: "http://"+STREAM_ADDR+":"+STREAM_PORT
-  }*/
+  }
 }
 

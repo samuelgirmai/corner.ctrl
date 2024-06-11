@@ -1,3 +1,3 @@
 #!/bin/bash
 
-npm run ctrl
+npm run --silent ctrl

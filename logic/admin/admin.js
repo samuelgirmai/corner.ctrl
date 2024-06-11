@@ -12,7 +12,7 @@ export async function get_admin(name)
 {
   let c = await read_license("corner.client.admin");
 
-  let p = await read_password("corner.person.admin");
+  let p = await read_password("admin");
 
   console.log(JSON.stringify({
     license:  c.status == "ok"?c.result.linfo.license:null,

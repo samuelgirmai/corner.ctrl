@@ -7,7 +7,7 @@ import {
  */
 let admin = {
   pii: {
-    name: "corner.person.admin",
+    name: "admin",
     fname: "user",
     gfname: "fana",
     mname: "zimam",
@@ -37,7 +37,7 @@ let admin = {
 
 module.exports = {
   admin: {
-    name: "corner.person.admin",
+    name: admin.pii.name,
     pii: admin.pii,
     //caps: uris2caps(admin.caps)
   }

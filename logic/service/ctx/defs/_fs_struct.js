@@ -152,12 +152,80 @@ let geofense = [
   }
 ]
 
+let cexch = [
+  {
+    "name": "cexch",
+    "file": [
+      {
+        "name": "transfer",
+        "index": [
+          {key: "req_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "fragment",
+        "index": [
+          {key: "req_id", val: 1, unq: false},
+          {key: "frag_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "fcDeposite",
+        "index": [
+          {key: "req_id", val: 1, unq: false},
+          {key: "fcDeposite_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "lcDeposite",
+        "index": [
+          {key: "req_id", val: 1, unq: false},
+          {key: "frag_id", val: 1, unq: false},
+          {key: "lcDeposite_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "txidInfo",
+        "index": [
+          {key: "req_id", val: 1, unq: false},
+          {key: "frag_id", val: 1, unq: false},
+          {key: "txidInfo_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "lcDepositeLock",
+        "index": [
+          {key: "req_id", val: 1, unq: false},
+          {key: "frag_id", val: 1, unq: false},
+          {key: "lock_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "txidInfoLock",
+        "index": [
+          {key: "req_id", val: 1, unq: false},
+          {key: "frag_id", val: 1, unq: false},
+          {key: "lock_id", val: 1, unq: true}
+        ]
+      },
+      {
+        "name": "sms",
+        "index": [
+          {key: "code", val: 1, unq: true},
+          {key: "phone_number", val: 1, unq: false}
+        ]
+      }
+    ]
+  }
+]
+
 module.exports = {
   corner: corner,
   finance: finance,
   issuance: issuance,
   dedup: dedup,
   dummy: dummy,
-  geofense: geofense
+  geofense: geofense,
+  cexch: cexch
 }
 
