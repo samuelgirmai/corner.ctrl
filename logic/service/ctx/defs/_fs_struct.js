@@ -214,6 +214,13 @@ let cexch = [
           {key: "code", val: 1, unq: true},
           {key: "phone_number", val: 1, unq: false}
         ]
+      },
+      {
+        "name": "firebaseToken",
+        "index": [
+          {key: "token", val: 1, unq: true},
+          {key: "user_id", val: 1, unq: false}
+        ]
       }
     ]
   }
