@@ -249,6 +249,35 @@ let ashera = {
 }
 ashera.sii.host = ashera.api.addr+":"+ashera.api.port;
 
+
+let ashera2 = {
+  sii: {
+    name: "corner.ashera2",
+    desc: "corner ashera service",
+    owner_name: "bokri",
+    host: null,
+    address: {
+      phone_number: "+251000000000",
+      email: "corner@bokri.xyz"
+    }
+  },
+  api: {
+    port: 22020,
+    bind: "0.0.0.0",
+    addr: "0.0.0.0",
+  },
+  /*fs: {
+    name: "ashera",
+    port: 29001,
+    host: "127.0.0.1"
+  },*/
+  caps: [
+    "/platform/auth/identity/person/read",
+    "/platform/auth/identity/person/fingerprint/write"
+  ]
+}
+ashera2.sii.host = ashera2.api.addr+":"+ashera2.api.port;
+
 let issuance = {
   sii: {
     name: "corner.issuance.test",
@@ -431,17 +460,6 @@ module.exports = {
     },
     caps: uris2caps(stream.caps)
   },
-  /*notif: {
-    name: "corner.notif",
-    sii: notif.sii,
-    conf: {
-      proxy: G.proxy,
-      stream: G.stream,
-      api: notif.api,
-      name: notif.sii.name
-    },
-    caps: uris2caps(notif.caps)
-  },*/
   finance: {
     name: "corner.finance",
     sii: finance.sii,
@@ -508,6 +526,25 @@ module.exports = {
       name: ashera.sii.name
     },
     caps: uris2caps(ashera.caps)
+  },
+  ashera2: {
+    name: "corner.ashera2",
+    sii: ashera2.sii,
+    conf: {
+      proxy: G.proxy,
+      api: ashera2.api,
+      //fs: ashera2.fs,
+      name: ashera2.sii.name,
+      setting: {
+        faceThreshold: 4,
+        fingerThreshold: 4,
+        irisThreshold: 4,
+        responseVersion: "v2",
+        enableFullMatchResult: true,
+        maxResults: 10
+      }
+    },
+    caps: uris2caps(ashera2.caps)
   },
   issuance: {
     name: "corner.issuance",

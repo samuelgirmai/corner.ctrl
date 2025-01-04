@@ -136,37 +136,37 @@ async function other()
 
   r = await CTRL.proc_basic("state", "config");
 
-  if(r.status == "err"){
+  if(!r || r.status == "err"){
     console.log(".err.basic.state");
   }
 
   r = await CTRL.proc_third("config");
 
-  if(r.status == "err"){
+  if(!r || r.status == "err"){
     console.log(".err.third.config");
   }
 
   r = await CTRL.proc_third("fsys");
 
-  if(r.status == "err"){
+  if(!r || r.status == "err"){
     console.log(".err.third.fsys");
   }
 
   r = await CTRL.proc_third("setup", "corner.client.root");
 
-  if(r.status == "err"){
+  if(!r || r.status == "err"){
     console.log(".err.third.state");
   }
 
   r = await CTRL.proc_third("allow");
 
-  if(r.status == "err"){
+  if(!r || r.status == "err"){
     console.log(".err.third.allow");
   }
 
   r = await CTRL.proc_third("session");
 
-  if(r.status == "err"){
+  if(!r || r.status == "err"){
     console.log(".err.third.session");
   }
 
